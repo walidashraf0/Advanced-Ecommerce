@@ -1,0 +1,22 @@
+:root {
+  --font-family-main: "Roboto", sans-serif;
+  --font-size-xl: 32px;
+  --font-line-xl: 40px;
+  --font-xl: var(--font-size-xl) / var(--font-line-xl)
+    var(var(--font-family-main));
+  --font-size-l: 24px;
+  --font-line-l: 32px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(var(--font-family-main));
+  --font-size-base: 18px;
+  --font-line-base: 26px;
+  --font-base: var(--font-size-base) / var(--font-line-base)
+    var(var(--font-family-main));
+  --font-size-m: 16px;
+  --font-line-m: 24px;
+  --font-base: var(--font-size-m) / var(--font-line-m)
+    var(var(--font-family-main));
+  --font-size-s: 12px;
+  --font-line-s: 18px;
+  --font-base: var(--font-size-s) / var(--font-line-s)
+    var(var(--font-family-main));
+}

@@ -3,6 +3,7 @@
         "stylelint-config-standard-scss"
     ],
     "ruels": {
+        "custom-property-empty-line-before": null,
         "selector-class-pattern": null
     }
 }

@@ -1,3 +1,7 @@
+import {
+  languageIconList,
+  type SupportedLngsType,
+} from "./i18n/LanguageIconsList";
 import { routePaths, AppRoutes } from "./router/routePath";
 import {
   Theme,
@@ -15,4 +19,6 @@ export {
   LOCAL_STORAGE_THEME_KEY,
   useTheme,
   type ThemeType,
+  type SupportedLngsType,
+  languageIconList,
 };

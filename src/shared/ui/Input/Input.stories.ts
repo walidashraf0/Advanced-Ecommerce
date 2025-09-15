@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
 
+
 import  Input  from "./Input";
 
 const meta = {
@@ -28,12 +29,12 @@ export const WithValue: Story = {
   },
 };
 
-export const Password: Story = {
-  args: {
-    type: "password",
-    value: "123",
-  },
-};
+// export const Password: Story = {
+//   args: {
+//     type: "password",
+//     value: "123",
+//   },
+// };
 
 export const Disabled: Story = {
   args: {
@@ -46,9 +47,3 @@ export const Rounded: Story = {
     rounded: true,
   },
 };
-
-// export const WithIcon: Story = {
-//   args: {
-//     Icon: <AppIcon size={20} Icon={SearchIcon} />,
-//   },
-// };

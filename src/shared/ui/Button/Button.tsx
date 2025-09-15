@@ -21,4 +21,4 @@ const Button = ({ children, className, size = 'sm', form = 'pill', theme = 'prim
     )
 }
 
-export default Button
+export default  Button 

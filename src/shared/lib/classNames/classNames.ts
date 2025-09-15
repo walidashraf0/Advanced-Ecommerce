@@ -1,6 +1,6 @@
 type ClassValue = string | Record<string, boolean> | undefined;
 
-export const className = (...args: ClassValue[]): string => {
+export const classNames = (...args: ClassValue[]): string => {
   return args
     .flatMap((arg) => {
       if (!arg) return [];

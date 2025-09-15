@@ -3,5 +3,30 @@
         "cart": "Cart",
         "login": "Login",
         "searchBy": "Search by"
+    },
+    "footer": {
+        "about": "About",
+        "aboutUs": "About Us",
+        "ourBranches": "Our Branches",
+        "changeLog": "Changelog",
+        "quickLinks": "Quick Links",
+        "faqs": "FAQs",
+        "recipes": "Recipes",
+        "contactUs": "Contact Us",
+        "helpSupport": "Help & Support",
+        "termsOfServices": "Terms of Service",
+        "privacyPolicy": "Privacy Policy",
+        "security": "Security",
+        "company": "Company",
+        "blog": "Blog",
+        "contact": "Contact",
+        "social": "Social",
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "x": "Twitter",
+        "copyRight": "All rights reserved © {{year}} {{company}}"
+    },
+    "PageLoader": {
+        "loading": "Loading..."
     }
 }

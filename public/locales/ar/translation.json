@@ -3,5 +3,30 @@
         "cart": "السلة",
         "login": "تسجيل الدخول",
         "searchBy": "البحث بواسطة"
+    },
+    "footer": {
+        "about": "حول",
+        "aboutUs": "معلومات عنا",
+        "ourBranches": "فروعنا",
+        "changeLog": "سجل التغييرات",
+        "quickLinks": "روابط سريعة",
+        "faqs": "الأسئلة الشائعة",
+        "recipes": "وصفات",
+        "contactUs": "اتصل بنا",
+        "helpSupport": "المساعدة والدعم",
+        "termsOfServices": "شروط الخدمة",
+        "privacyPolicy": "سياسة الخصوصية",
+        "security": "الأمان",
+        "company": "الشركة",
+        "blog": "مدونة",
+        "contact": "تواصل",
+        "social": "وسائل التواصل",
+        "facebook": "فيسبوك",
+        "instagram": "انستجرام",
+        "x": "تويتر",
+        "copyRight": "جميع الحقوق محفوظة © {{year}} {{company}}"
+    },
+    "PageLoader": {
+        "loading": "...جار التحميل"
     }
 }

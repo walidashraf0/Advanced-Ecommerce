@@ -1,7 +1,9 @@
-import { Route, Routes } from "react-router"
-import { routerconfig } from "../routerConfig"
 import { Suspense } from "react"
+import { Route, Routes } from "react-router"
+
 import { PageLoader } from "@/widgets/PageLoader"
+
+import { routerconfig } from "../routerConfig"
 
 export const AppRouter = () => {
     return (

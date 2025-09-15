@@ -1,9 +1,12 @@
-import { cn } from "@/shared/lib";
 import { useState, type ChangeEvent, type InputHTMLAttributes, type ReactNode } from "react"
-import styles from "./Input.module.scss"
-import Button from "../Button/Button";
+
 import HideIcon from '@/shared/assets/icons/Hide.svg'
 import ShowIcon from '@/shared/assets/icons/Show.svg'
+import { cn } from "@/shared/lib";
+
+import Button from "../Button/Button";
+
+import styles from "./Input.module.scss"
 
 type HTMlInputType = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>;
 

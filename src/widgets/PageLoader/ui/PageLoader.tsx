@@ -1,6 +1,9 @@
 import { useTranslation } from 'react-i18next';
-import styles from './PageLoader.module.scss';
+
 import { Spinner } from '@/shared/ui';
+
+import styles from './PageLoader.module.scss';
+
 const PageLoader = () => {
     const { t } = useTranslation();
     return (

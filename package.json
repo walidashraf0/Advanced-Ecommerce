@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lient:ts": "tsx",
+    "lient:ts": "tsc",
     "lint": "eslint .",
     "lint:scss": "stylelint **/*.scss",
     "preview": "vite preview",

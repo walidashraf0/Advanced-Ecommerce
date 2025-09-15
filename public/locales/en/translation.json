@@ -28,5 +28,15 @@
     },
     "PageLoader": {
         "loading": "Loading..."
+    },
+    "pageError": {
+        "title": "Something went wrong",
+        "description": "Sorry – an unexpected error occurred. Please try refreshing the page or come back later.",
+        "reload": "Try again"
+    },
+    "notFound": {
+        "title": "Page Not Found",
+        "description": "The page you're looking for isn't available. Try to search again or use the go back button below.",
+        "goBack": "Go Back"
     }
 }

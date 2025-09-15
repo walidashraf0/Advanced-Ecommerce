@@ -1,13 +1,43 @@
-import type { Preview } from '@storybook/react-vite'
+import type { Preview } from "@storybook/react-vite";
 
-import "../src/app/styles/index.scss"
+import "../src/app/styles/index.scss";
+import { LanguageDecorator, RouterDecorator, ThemeDecorator } from "../src/shared/config/storybook";
+
 
 const preview: Preview = {
+  globalTypes: {
+    theme: {
+      name: "Theme",
+      description: "App theme",
+      toolbar: {
+        icon: "circlehollow",
+        items: [
+          { value: "blue-theme", title: "Blue Theme" },
+          { value: "pink-theme", title: "Pink Theme" },
+        ],
+        dynamicTitle: true,
+      },
+      defaultValue: "pink-theme",
+    },
+    locale: {
+      name: "Locale",
+      description: "App locale",
+      toolbar: {
+        icon: "globe",
+        items: [
+          { value: "en", title: "English" },
+          { value: "ar", title: "Arabic" },
+        ],
+        dynamicTitle: true,
+      },
+      defaultValue: "en",
+    },
+  },
   parameters: {
     controls: {
       matchers: {
-       color: /(background|color)$/i,
-       date: /Date$/i,
+        color: /(background|color)$/i,
+        date: /Date$/i,
       },
     },
 
@@ -15,9 +45,10 @@ const preview: Preview = {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
-      test: 'todo'
-    }
+      test: "todo",
+    },
   },
+  decorators: [ThemeDecorator, RouterDecorator, LanguageDecorator],
 };
 
 export default preview;

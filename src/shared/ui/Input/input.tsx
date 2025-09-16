@@ -1,7 +1,7 @@
 import { useState, type ChangeEvent, type InputHTMLAttributes, type ReactNode } from "react"
 
-import HideIcon from '@/shared/assets/icons/Hide.svg'
-import ShowIcon from '@/shared/assets/icons/Show.svg'
+import HideIcon from '@/shared/assets/icons/Hide.svg?react'
+import ShowIcon from '@/shared/assets/icons/Show.svg?react'
 import { cn } from "@/shared/lib";
 
 import Button from "../Button/Button";

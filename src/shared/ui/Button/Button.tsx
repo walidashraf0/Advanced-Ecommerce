@@ -15,13 +15,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     form?: ButtonForm,
     theme?: ButtonTheme,
     disabled?: boolean
+    fullWidth?: boolean
 }
-const Button = ({ children, className, size = 'sm', form = 'pill', theme = 'primary', disabled = false, ...rest }: ButtonProps) => {
+const Button = ({ children, className, fullWidth = false, size = 'sm', form = 'pill', theme = 'primary', disabled = false, ...rest }: ButtonProps) => {
     return (
-        <button {...rest} disabled={disabled} className={cn(styles.button, className, styles[size], styles[form], styles[theme], { [styles.disabled]: disabled, })}>
+        <button {...rest} disabled={disabled} className={cn(styles.button, className, styles[size], styles[form], styles[theme], { [styles.disabled]: disabled, [styles.fullWidth]: fullWidth, })}>
             {children}
         </button>
     )
 }
 
-export default  Button 
+export default Button 

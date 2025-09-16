@@ -4,11 +4,16 @@ import {
   type UnknownAction,
 } from "@reduxjs/toolkit";
 import { type StateSchema } from "./StateSchema";
+import { userReducer } from "@/entities/user";
+import { loginReducer } from "@/features/login";
 
 export const createStore = (intialState: StateSchema) => {
   return configureStore<StateSchema>({
     preloadedState: intialState,
-    reducer: {},
+    reducer: {
+      user: userReducer,
+      loginForm: loginReducer,
+    },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
     devTools: true,
   });

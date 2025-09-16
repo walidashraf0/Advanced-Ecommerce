@@ -1,12 +1,15 @@
-import { useTranslation } from "react-i18next"
-import { Link } from "react-router"
+import { LoginForm } from "@/features/login";
+import styles from "./LoginPage.module.scss";
 
 const LoginPage = () => {
-  const { t } = useTranslation("login");
   return (
     <>
-      {t("login")}
-      <Link to={'/'}>Home Page</Link>
+      <div className={styles.wrapper}>
+        <div className={styles.main}>
+          <h1 className={styles.title}>Sign In</h1>
+          <LoginForm />
+        </div>
+      </div>
     </>
   )
 }

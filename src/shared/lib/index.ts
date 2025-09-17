@@ -1,3 +1,4 @@
-import { classNames } from "./classNames/classNames";
+import { classNames as cn } from "./classNames/classNames";
+import { useAppDispatch, useAppSelector } from "./redux/hooks";
 
-export { classNames as cn };
+export { cn, useAppSelector, useAppDispatch };

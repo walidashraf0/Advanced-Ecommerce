@@ -22,7 +22,7 @@ export const login = createAsyncThunk<void, LoginArgs, { rejectValue: string }>(
       return;
       // eslint-disable-next-line
     } catch (error) {
-      thunkApi.rejectWithValue("login error");
+      return thunkApi.rejectWithValue("login error");
     }
   }
 );

@@ -14,10 +14,12 @@ interface InputProps extends HTMlInputType {
   className?: string;
   disabled?: boolean;
   rounded?: boolean;
-  Icon?: ReactNode
-  onChange?: (value: string) => void
+  Icon?: ReactNode;
+  onChange?: (value: string) => void;
+  error?: boolean;
+  label?: string;
 }
-const Input = ({ disabled = false, value, className, onChange, Icon, rounded = false, type = "text", ...rest }: InputProps) => {
+const Input = ({ disabled = false, label, error = false, value, className, onChange, Icon, rounded = false, type = "text", ...rest }: InputProps) => {
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [focus, setFocus] = useState<boolean>(false);
@@ -38,21 +40,26 @@ const Input = ({ disabled = false, value, className, onChange, Icon, rounded = f
   }
 
   return (
-    <div className={cn(styles.inputContainer, className, {
-      [styles.rounded]: rounded,
-      [styles.disabled]: disabled,
-      [styles.focus]: focus,
-    })}>
-      {Icon}
-      <input {...rest} value={value} disabled={disabled} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} type={showPassword && type === 'password' ? 'text' : type} className={cn(styles.input, {
+    <>
+      {label && <label className={cn(styles.label, { [styles.error]: error })}>{label}</label>}
+      <div className={cn(styles.inputContainer, className, {
+        [styles.rounded]: rounded,
         [styles.disabled]: disabled,
-      })} />
-      {type === "password" && (
-        <Button theme="ghost" type="button" className="styles.toggleVisability" onClick={toggleShowPassword}>
-          {showPassword ? <HideIcon /> : <ShowIcon />}
-        </Button>
-      )}
-    </div>
+        [styles.focus]: focus,
+        [styles.error]: error,
+      })}>
+        {Icon}
+        <input {...rest} value={value} disabled={disabled} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} type={showPassword && type === 'password' ? 'text' : type} className={cn(styles.input, {
+          [styles.disabled]: disabled,
+          [styles.error]: error,
+        })} />
+        {type === "password" && (
+          <Button theme="ghost" type="button" className="styles.toggleVisability" onClick={toggleShowPassword}>
+            {showPassword ? <HideIcon /> : <ShowIcon />}
+          </Button>
+        )}
+      </div>
+    </>
   )
 }
 

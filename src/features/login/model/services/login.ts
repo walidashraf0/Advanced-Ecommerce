@@ -1,7 +1,7 @@
 import { LOCAL_STORAGE_USER_KEY } from "@/shared/config";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import { userActions } from "../../../../entities/user/model/slice/userSlice";
+import { httpClient } from "@/shared/Api";
 
 type LoginArgs = {
   email?: string;
@@ -12,7 +12,7 @@ export const login = createAsyncThunk<void, LoginArgs, { rejectValue: string }>(
   "features/login",
   async (authData, thunkApi) => {
     try {
-      const res = await axios.post(
+      const res = await httpClient.post(
         "http://localhost:3000/auth/login",
         authData
       );

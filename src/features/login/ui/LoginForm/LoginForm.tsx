@@ -2,7 +2,7 @@ import MailIcon from "@/shared/assets/icons/Mail.svg?react"
 import PhoneIcon from "@/shared/assets/icons/Phone.svg?react"
 import ArrowRight from "@/shared/assets/icons/ArrowRight.svg?react"
 
-import { AppIcon, Button, Input, Tabs } from "@/shared/ui"
+import { AppIcon, Button, Input, PhoneInput, Tabs } from "@/shared/ui"
 import styles from "./loginForm.module.scss"
 import { AuthMethod, routePaths } from "@/shared/config"
 import type { FormEvent } from "react"
@@ -68,7 +68,7 @@ const LoginForm = () => {
                     <Input error={!!error} label="Email" onChange={handleChangeEmail} value={email} type="email" className={styles.input} placeholder="Enter Your Email" />
                 </Tabs.Content>
                 <Tabs.Content value={AuthMethod.PHONE}>
-                    <Input label="Phone" error onChange={handleChangePhone} value={phone} className={styles.input} placeholder="Enter Your Phone" />
+                    <PhoneInput label="Phone" onChange={handleChangePhone} value={phone} className={styles.input} placeholder="Enter Your Phone" />
                 </Tabs.Content>
             </Tabs>
             <Input label="Password" onChange={handleChangePassword} value={password} type="password" className={styles.input} placeholder="Enter Your Password" />

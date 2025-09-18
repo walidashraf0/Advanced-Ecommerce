@@ -1,22 +1,36 @@
 import {
   configureStore,
+  type ReducersMapObject,
   type ThunkDispatch,
   type UnknownAction,
 } from "@reduxjs/toolkit";
-import { type StateSchema } from "./StateSchema";
+import { type ReduxStoreWithManager, type StateSchema } from "./StateSchema";
 import { userReducer } from "@/entities/user";
-import { loginReducer } from "@/features/login";
+import type { DeepPartial } from "@/shared/lib";
+import { createReducerManager } from "./reducerManager";
 
-export const createStore = (intialState: StateSchema) => {
-  return configureStore<StateSchema>({
+export const createStore = (
+  intialState: StateSchema,
+  asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>
+): ReduxStoreWithManager => {
+  const rootReducer: ReducersMapObject<StateSchema> = {
+    user: userReducer,
+    ...(asyncReducers as Partial<ReducersMapObject<StateSchema>>),
+  };
+
+  const reducerManager = createReducerManager(rootReducer);
+  const store = configureStore<StateSchema>({
     preloadedState: intialState,
-    reducer: {
-      user: userReducer,
-      loginForm: loginReducer,
+    reducer: (state, action) => {
+      return reducerManager.reduce(state ?? ({} as StateSchema), action);
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
     devTools: true,
-  });
+  }) as ReduxStoreWithManager;
+
+  store.reducerManager = reducerManager;
+
+  return store;
 };
 
 export type AppDispatch = ThunkDispatch<StateSchema, unknown, UnknownAction>;

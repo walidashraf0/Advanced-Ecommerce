@@ -1,4 +1,4 @@
-import { useState, type ChangeEvent, type InputHTMLAttributes, type ReactNode } from "react"
+import { useState, type ChangeEvent, type InputHTMLAttributes, type ReactNode, type Ref } from "react"
 
 import HideIcon from '@/shared/assets/icons/Hide.svg?react'
 import ShowIcon from '@/shared/assets/icons/Show.svg?react'
@@ -10,7 +10,7 @@ import styles from "./Input.module.scss"
 
 type HTMlInputType = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>;
 
-interface InputProps extends HTMlInputType {
+export interface InputProps extends HTMlInputType {
   className?: string;
   disabled?: boolean;
   rounded?: boolean;
@@ -18,8 +18,9 @@ interface InputProps extends HTMlInputType {
   onChange?: (value: string) => void;
   error?: boolean;
   label?: string;
+  ref?: Ref<HTMLInputElement>;
 }
-const Input = ({ disabled = false, label, error = false, value, className, onChange, Icon, rounded = false, type = "text", ...rest }: InputProps) => {
+const Input = ({ disabled = false, ref, label, error = false, value, className, onChange, Icon, rounded = false, type = "text", ...rest }: InputProps) => {
 
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [focus, setFocus] = useState<boolean>(false);
@@ -49,7 +50,7 @@ const Input = ({ disabled = false, label, error = false, value, className, onCha
         [styles.error]: error,
       })}>
         {Icon}
-        <input {...rest} value={value} disabled={disabled} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} type={showPassword && type === 'password' ? 'text' : type} className={cn(styles.input, {
+        <input ref={ref} {...rest} value={value} disabled={disabled} onFocus={handleFocus} onBlur={handleBlur} onChange={handleChange} type={showPassword && type === 'password' ? 'text' : type} className={cn(styles.input, {
           [styles.disabled]: disabled,
           [styles.error]: error,
         })} />

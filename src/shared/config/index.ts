@@ -1,3 +1,4 @@
+import { API_URL } from "./api/api";
 import {
   AuthProviders,
   AuthMethod,
@@ -17,7 +18,6 @@ import {
   type ThemeType,
 } from "./theme/themeContext";
 import { useTheme } from "./theme/useTheme";
-
 export {
   routePaths,
   AppRoutes,
@@ -29,6 +29,7 @@ export {
   languageIconList,
   AuthProviders,
   AuthMethod,
+  API_URL,
   type ThemeType,
   type AuthMethodType,
   type SupportedLngsType,
